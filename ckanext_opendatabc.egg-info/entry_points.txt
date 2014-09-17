@@ -1,0 +1,6 @@
+
+        [ckan.plugins]
+        # Add plugins here, e.g.
+        opendatabc=ckanext.opendatabc.plugin:OpenDataBCTheme
+
+    

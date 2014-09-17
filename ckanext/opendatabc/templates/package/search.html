@@ -1,0 +1,150 @@
+{% extends "page.html" %}
+{% import 'macros/form.html' as form %}
+
+{% block header %}
+ {% include "/package/search_header.html" %}
+
+
+{% endblock %}
+
+
+{% block subtitle %}{{ _("Search for a Dataset") }}{% endblock %}
+
+
+{% block primary_content %}
+ <div class="toolbar">
+<div class="container">
+
+ {% snippet 'snippets/search_form.html', type='dataset', query=c.q, sorting=sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, show_empty=request.params, error=c.query_error, fields=c.fields %}
+<div class="row">
+<div class="col-lg-7 col-md-7 col-sm-9 col-xs-12" >
+<ul class="filters facet groups iso-selector" iso-facet="groups" style="list-style:none;">
+{% set groups = h.get_action("group_list") %}
+{% for item in groups  %}
+      <li >
+          <a {% if c.pkg_dict %}{% for group in c.pkg_dict.groups %}{% if item == group.name %}class="active"{% endif %}{% endfor %}{% endif %}
+             href="/dataset#groups_cats=.{{item}}."
+             class="iso-toggle-category" 
+             iso-facet="groups" iso-category="{{item}}"
+
+             >{{item}}
+            <span aria-hidden="true" class="icon-{{item}}"
+              data-toggle="tooltip" title="" data-original-title="{{h.group_name_to_title(item)}}"
+            ></span>
+          </a>
+        </li>
+    {% endfor %} 
+</ul>
+</div>
+<div class="col-lg-4 col-md-5 col-sm-3 col-xs-12">
+<ul>
+<li class="facet tags">
+{% snippet "snippets/facet_tags.html" %}
+</li>
+<li class="facet formats">
+
+{% snippet "snippets/facet_formats.html" %}
+</li>
+<li class="facet order">
+
+{% snippet "snippets/order_list.html" %}
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class = "tagbox">
+<ul >
+    <li class="iso-selector" iso-facet="groups">
+      Groups: 
+      <span>
+        <a class="iso-example label" href="#"> <span class="close">x</span> </a>
+        <a href="#" class="iso-toggle-facet" data-toggle="tooltip" data-placement="top" iso-facet="groups"></a>
+        <a href="#" class="iso-clear-facet" data-toggle="tooltip" data-placement="top" iso-facet="groups"></a>
+       </span>
+    </li>
+    <li class="iso-selector" iso-facet="tags">
+      Tags:
+      <span>
+        <a class="iso-example label" href="#"> <span class="close">x</span> </a>
+        <a href="#" class="iso-toggle-facet" data-toggle="tooltip" data-placement="top" title="" iso-facet="tags"></a>
+        <a href="#" class="iso-clear-facet" data-toggle="tooltip" data-placement="top" title="" iso-facet="tags"></a>
+       </span>
+    </li>
+    <li class="iso-selector" iso-facet="res-format">
+      Format:
+      <span>
+        <a class="iso-example label" href="#"> <span class="close">x</span> </a>
+        <a href="#" class="iso-toggle-facet" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cambiar operador" iso-facet="res-format"></a>
+        <a href="#" class="iso-clear-facet" data-toggle="tooltip" data-placement="top" title="" data-original-title="Limpiar filtro" iso-facet="res-format"></a>
+       </span>
+    </li>
+  </ul>
+ </div>
+
+<section class="module">
+    <div class="module-content">
+        {% if c.fields -%}
+          <span>
+            {{ form.hidden_from_list(fields=c.fields) }}
+          </span>
+        {%- endif %}
+
+        <div id="dataset-search-ext"></div>
+      </form>
+      <div class="results">
+        <strong>
+          {%- if request.params and c.page.item_count -%}
+            {{ c.page.item_count }} datasets{{ _(" found for \"{query}\"").format(query=c.q) if c.q }}
+          {%- elif request.params and c.page.item_count == 0 -%}
+            {{ _('Sorry no datasets found for "{query}"').format(query=c.q) }}
+          {%- endif -%}
+        </strong>
+        <div class="filter-list">
+          {% for field in c.fields_grouped %}
+            <span class="facet">{{ c.facet_titles.get(field) }}:</span>
+            {% for value in c.fields_grouped[field] %}
+              <span class="filtered pill">
+                {%- if c.translated_fields and c.translated_fields.has_key((field,value)) -%}
+                  {{ c.translated_fields[(field,value)] }}
+                {%- else -%}
+                  {{ value }}
+                {%- endif %}
+                <a href="{{ c.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><i class="icon-remove"></i></a>
+              </span>
+            {% endfor %}
+          {% endfor %}
+        </div>
+        {% if request.params and c.page.item_count == 0 %}
+          <p class="extra">Try another search term,
+          browse the datasets below or <a href="{{ h.url_for(controller='package', action='new') }}">{{ _('add your own data') }}</a>.
+          </p>
+        {% endif %}
+      </div>
+
+      {% if c.query_error %}
+        {% trans %}
+          <p><strong>There was an error while searching.</strong> Please try again.</p>
+        {% endtrans %}
+      {% endif %}
+      {{ h.snippet('snippets/package_list.html', packages=c.page.items) }}
+    </div>
+
+    {{ c.page.pager(q=c.q) }}
+  </section>
+
+  <section class="module module-narrow module-shallow">
+    <small class="module-content">
+      You can also access this registry using the {{ h.link_to(_('API'), h.url_for(controller='api', action='get_api', ver=1)) }}
+      <!--! FIXME the API Docs link should be for the version of ckan being used but the dev version of ckan needs to point to latest so not trivial -->
+      (see {{ h.link_to(_('API Docs'), 'http://docs.ckan.org/en/latest/api.html') }})
+      {% if g.dumps_url -%}
+        or download a <a href="{{ g.dumps_url }}">full {{ g.dumps_format }} dump</a>
+      {%- endif %}.
+    </small>
+  </section>
+{% endblock %}
+
+{% block secondary_content %}
+{% endblock %}

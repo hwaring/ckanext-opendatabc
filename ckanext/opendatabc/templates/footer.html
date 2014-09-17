@@ -1,0 +1,20 @@
+{% ckan_extends %}
+{% block footer_attribution %}
+
+<p><strong>Powered by</strong> <a  href="http://opengovgear.com"><img src="/twitterTransWhite.png"></a></p>
+{% endblock %}
+
+{% block footer_lang %}
+
+{% endblock %}
+
+{% block footer_links_ckan %}
+              {% set api_url = 'http://docs.ckan.org/en/latest/api/' %}
+              <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
+	      <li><a href="/pages/terms-of-use">terms</a></li>
+	      <li><a href="/pages/privacy">privacy policy</a></li>
+	      <li><a href="https://www.facebook.com/opendatabc"><img src="/facebook.png" /></a>
+		  <a href="https://twitter.com/OpenDataBC"><img src="/twitter.png" /></a>
+		  <a href="https://github.com/OpenDataBC"><img src="/github.png"/></a>
+		  <a href="https://plus.google.com/115397729842187156386/posts"><img src="/googleplus.png"/></a></li>
+            {% endblock %}

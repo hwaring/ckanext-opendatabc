@@ -1,0 +1,5 @@
+{% for item in tags %}
+  <a href="/dataset#tags_cats=.{{ item.name }}." iso-facet="tags" iso-category="{{item.name.replace(" ", "-")|lower}}" class="label">
+  	<span>{{item.display_name|lower}}</span> 
+  </a>
+{% endfor %}

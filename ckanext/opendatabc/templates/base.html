@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+{% block links %}
+<link rel="shortcut icon" href="/favicon.ico" /> 
+{% endblock %}
+ 
+{% block styles %}
+{{ super() }}
+
+{% resource 'opendatabc/bootstrap.css' %}
+{% resource 'opendatabc/ogg.css' %}
+{% resource 'opendatabc/opendatabc.css' %}
+{% resource 'opendatabc/isotope.js' %}
+{% resource 'opendatabc/bbq.js' %}
+{% resource 'opendatabc/gisotope.js' %}
+{% resource 'opendatabc/bootstrap.js' %}
+{% resource 'opendatabc/search.js' %}
+{% resource 'opendatabc/colour.js' %}
+
+<meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+-->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+
+{% endblock %}
+

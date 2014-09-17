@@ -1,0 +1,11 @@
+setup.py
+ckanext/__init__.py
+ckanext/opendatabc/__init__.py
+ckanext/opendatabc/plugin.py
+ckanext_opendatabc.egg-info/PKG-INFO
+ckanext_opendatabc.egg-info/SOURCES.txt
+ckanext_opendatabc.egg-info/dependency_links.txt
+ckanext_opendatabc.egg-info/entry_points.txt
+ckanext_opendatabc.egg-info/namespace_packages.txt
+ckanext_opendatabc.egg-info/not-zip-safe
+ckanext_opendatabc.egg-info/top_level.txt

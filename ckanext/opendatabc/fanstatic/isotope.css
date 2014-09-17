@@ -1,0 +1,273 @@
+
+.dataset-organization{
+color:white;
+max-height:0;
+width: 190px;
+margin: -15px;
+bottom: 167px;
+position: absolute;
+border-radius: 3px 3px 0 0;
+text-align:center;
+transition:max-height .6s;
+-webkit-transition:max-height .6s;
+transition-timing-function: ease;
+-webkit-transition-timing-function: ease;
+font-size:0;
+overflow-y: hidden;
+}
+
+.media-view:hover + .dataset-organization
+{
+overflow-y: hidden;
+
+display:inline-block;
+max-height:20px;
+font-size:14px;
+transition:max-height .3s;
+transition-timing-function: ease;
+-webkit-transition: max-height .3s;
+-webkit-transition-timing-function: ease;
+box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2);
+
+}
+.datasets{
+list-style:none;
+margin:0 auto;
+}
+.close{
+padding-left: 10px;
+}
+
+.information.giso-all.giso-all-no-categories.giso-all-no-query {
+display: none;
+}
+.tags .label{
+margin-left: 5px;
+
+}
+.tagbox .label{
+margin-left: 5px;
+}
+.tagbox .label[giso-facet='res-format'] {
+background-color: #f69f74;
+-webkit-box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+-moz-box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+
+}
+.tagbox .label[giso-facet='tags'] {
+background-color: #91dae3;
+-webkit-box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+-moz-box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+}
+
+
+.tagbox .giso-toggle-category.selected {
+display: inline-block;
+}
+.tagbox .label[giso-facet='groups'] {
+background-color: #76cbee;
+-webkit-box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+-moz-box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+box-shadow: 0px 0px 8px 2px rgba(118,203,238, .2);
+}
+.tagbox .giso-selector.giso-no-selected {
+display: none;
+}
+
+.tagbox li {
+list-style: none;
+list-style-type: none;
+font-size: 12px;
+}
+
+.tagbox .giso-toggle-category {
+display: none;
+}
+li.facet{
+float:left;
+display:inline;
+margin-left:10px;
+}
+i:before
+{
+margin-bottom:10px;
+}
+
+.media-item {
+position: relative;
+float: left;
+width: 190px;
+padding: 15px;
+margin: 15px 10px 0 10px;
+background-color: white;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+margin-bottom: 10px;
+box-shadow: 0 1.5px 2.5px rgba(0, 0, 0, 0.2);
+}
+.media-view:hover{
+box-shadow: none;
+}
+
+.media-view{
+border-bottom:none;
+border-right:none;
+border-left:none;
+margin-bottom: 60px;
+box-shadow: none;
+}
+.media-grid {
+ margin: 0 auto;
+list-style: none;
+background: #fbfbfb url("../../../base/images/bg.png");
+border: 1px solid #dddddd;
+border-width: 1px 0;
+}
+
+
+
+
+.filters
+{
+list-style: none;
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-align: justify;
+padding-left: 20px;
+padding-bottom: 10px;
+}
+
+.filters a{
+color:white;
+}
+
+.filters a:hover{
+text-decoration:none;
+}
+
+.toolbar .dropdown-menu {
+float:right;
+left:auto;
+
+}
+.toolbar .btn {
+padding:10px;
+
+}
+
+
+.dropdown-menu ul {
+list-style-type:none;
+list-style:none;
+}
+.toolbar .dropdown-toggle {
+float:right;
+
+}
+
+
+.filters li { display: inline;
+padding-right: 35px;
+ }
+
+.toolbar{
+
+
+background-color: #262e39;
+margin-top: 0px;
+margin-bottom: 0px;
+padding: 30px 0 0px 0;
+}
+
+.media-view {
+border-top: 10px solid #bbb;
+
+}
+.hold-icon {
+
+width:50px;
+margin:0 auto;
+padding-top: 20px;
+}
+.icon-large:before {
+vertical-align: -10%;
+font-size: 3.3333333333333333em;
+text-align: center;
+}
+
+
+.icon {
+margin:0 auto;
+width:100px;
+height:100px;
+border-radius: 100px;
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+background:#1abc9c;
+}
+#field-header-search{
+
+height:40px;
+width: 220px;
+border-radius: 50px; */
+/* -webkit-border-radius: 50px; */
+-moz-border-radius: 50px;
+padding-left:20px;
+}
+
+.media-item{
+min-height:130px;
+}
+font {
+color: #888;
+float: right;
+bottom: 0;
+
+}
+.notes {
+height:45px;
+font-size:11px;
+}
+
+.dataset-heading{
+height: 30px;
+}
+
+
+
+@media (min-width: 768px){
+
+.package-search-form div{
+margin-right: 40px;
+margin-bottom: 10px;
+}
+.filters li {
+display: inline;
+padding-right: 15px;
+}
+li.facet {
+margin-bottom:10px;
+}
+@media (min-width: 992px){
+
+.package-search-form div{
+margin-right: 20px;
+margin-bottom: 10px;
+}
+
+.filters li {
+display: inline;
+padding-right: 16px;
+}
+
+.filters {
+padding-left: 0;
+padding-bottom: 10px;
+}
+
+}
+
