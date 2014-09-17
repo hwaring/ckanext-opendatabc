@@ -1,6 +1,5 @@
 
 (function( $ ){
-	console.log("Hello There");
   	var methods = {
   		defaults: {
   			default_operator: 'and'
@@ -16,9 +15,7 @@
 	  		
 
 		    // Init Selectors
-	  		console.log("Hi");
 			$('.iso-selector').each(function(value, index) {
-				console.log("HEllo");
 				var selectorObj = $(this);
 				var facet = selectorObj.attr('iso-facet');
 				var exampleObj = selectorObj.find('.iso-example');
@@ -418,7 +415,6 @@
  	
   
 $.fn.ckan_isotope = function( method ) {
-   	console.log("victory"); 
     	if ( methods[method] ) {
       		return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
     	} else if ( typeof method === 'object' || ! method ) {
