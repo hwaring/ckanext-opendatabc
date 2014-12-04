@@ -1,4 +1,64 @@
-.tooltop {
+i.media-item .media-edit {
+z-index: 3;
+}
+.input-append .add-on, .input-prepend .add-on {
+}
+.site-footer * li>a:hover {
+color:#ddd;
+text-decoration: none;
+}
+.account-masthead .account ul.unstyled li a:hover {
+color: #fff;
+background-color: #0b2c4f;
+text-decoration: none;
+}
+a.btn {
+line-height:2em;
+}
+a.logo{
+position:absolute;
+}
+.alert .close {
+right:0;
+}
+.header-content .module-content:last-child{
+padding-bottom:15px;
+
+}
+.header-content .module-content:first-child{
+padding-top:0;
+
+}
+
+.navbar .nav>li>a{
+padding: 3px 7px 3px;
+}
+
+ul.navbar-nav.nav {
+float:right;
+}
+div.module-content h1.section-heading {
+text-align:center;
+}
+
+.header-content p, .header-content h1 {
+text-align:left;
+}
+
+.js .image-upload .btn-remove-url {
+height: 22px;
+}
+.content_action .btn{
+box-shadow:none;
+-moz-box-shadow:none;
+}
+.navbar .nav {
+margin: 35px 0 0 0;
+}
+.resource-item .btn-group {
+top: 7px;
+}
+.tooltip {
 z-index:1020;
 visibility:visible;
 }
@@ -34,11 +94,13 @@ margin: 0 auto;
 }
 
 .media-image-container{
-height:120px;
+height:100px;
 }
+
 .media-image{
-max-height:120px;
+max-height:100px;
 }
+
 header p {
 text-align:center;
 }
@@ -66,7 +128,7 @@ text-shadow: 0 0 0 #ffffff;
 color:#aaa;
 }
 .navbar .nav>li{
-margin: 0 7px;
+margin: 0 5px;
 }
 .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
 color: #999;
@@ -96,10 +158,39 @@ float:left;
 margin: 0 auto;
 height:120px;
 }
-
+.call:hover{
+text-decoration:none;
+}
 .line {
 height:3px;
 background-color:#b7b7b7;
+}
+.action-line {
+color:#fff;
+font-size:16px;
+text-align:left;
+margin-left:25px;
+
+}
+.header-content a.btn-action {
+color:#000;
+font-weight:bold;
+margin:10px 0;
+margin-left:25px;
+border-radius:0;
+}
+.header-content a.btn-action:hover {
+color:#000;
+font-weight:bold;
+margin:10px 0;
+margin-left:25px;
+border-radius:0;
+background-color:#ddd;
+}
+
+.banner-line {
+height:10px;
+background-color:#083b72;;
 }
 .account-masthead .line{
 background-color:#034b7f;
@@ -138,7 +229,6 @@ white-space: nowrap;
 background:#083b72;
 margin: 0 auto;
 margin-top: 15px;
-margin-bottom: 15px;
 color: white;
 font-size: 20px;
 font-weight: 500;
@@ -175,10 +265,15 @@ margin-right: 40px;
 float: right;
 background-size: 100%;
 }
+.dataset-metadata {
+bottom: 0px;
+position: absolute;
+width: 170px;
+}
 .dataset-organization{
 color:white;
 max-height:0;
-width: 205px;
+width: 191px;
 margin: -15px;
 bottom: 165px;
 position: absolute;
@@ -191,6 +286,9 @@ transition-timing-function: ease;
 -webkit-transition-timing-function: ease;
 font-size:0;
 overflow-y: hidden;
+z-index:5;
+
+
 }
 
 .dataset-content{
@@ -208,10 +306,28 @@ transition:max-height .3s;
 transition-timing-function: ease;
 -webkit-transition: max-height .3s;
 -webkit-transition-timing-function: ease;
-box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.2);
+box-shadow: -0.2px -0.1px 0.5px rgba(0, 0, 0, 0.5), 0.2px -0.1px 0.5px rgba(0, 0, 0, 0.5);
 
 }
 
+.media-view:hover ~ .package-notes {
+width:190px;
+
+min-height:45px;
+height:105px;
+position:absolute;
+left:0;
+z-index:2;
+background-color:white;
+transition:height .4s;
+transition-timing-function: ease;
+-webkit-transition: height .4s;
+-webkit-transition-timing-function: ease;
+border-radius: 3px;
+margin-bottom: 10px;
+padding: 0 15px;
+box-shadow: 0 2.0px 2.5px rgba(0, 0, 0, 0.3);
+}
 
 p.center{
 text-align:center;
@@ -322,11 +438,18 @@ padding-left: 25px;
 float: right;
 }
 
+.media-item {
+width: 200px;
+margin: 15px 7px 0 7px;
+}
+.media-heading {
+text-align:center;
+}
 .dataset.media-item {
 position: relative;
 float: left;
-width: 205px;
-height: 160px;
+width: 190px;
+height: 158px;
 padding: 15px;
 margin: 15px 10px 0 10px;
 background-color: white;
@@ -334,25 +457,44 @@ background-color: white;
 -moz-border-radius: 3px;
 border-radius: 3px;
 margin-bottom: 10px;
-box-shadow: 0 1.5px 2.5px rgba(0, 0, 0, 0.2);
+box-shadow: 0 0.5px 2.5px rgba(0, 0, 0, 0.5);
+}
+.dataset.media-item:hover{
+transition: box-shadow .5s;
+-webkit-transition: box-shadow .5s;
+
+box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.6);
 }
 .media-view:hover{
-box-shadow: none;
+box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.7);
+
 }
 
 .media-view{
 border-bottom:none;
 border-right:none;
 border-left:none;
-margin-bottom: 60px;
+box-shadow: 0 0.5px 2.5px rgba(0, 0, 0, 0.3);
+
+z-index:3;
+}
+
+.dataset > .dataset-content > .media-view{
+margin-bottom: 40px;
 box-shadow: none;
 }
+
+.dataset.media-view:hover{
+box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.6);
+
+}
+
 .media-grid {
  margin: 0 auto;
 list-style: none;
 background: #fbfbfb url("../../../base/images/bg.png");
 border: 1px solid #dddddd;
-border-width: 1px 0;
+border-width: 1px 1px;
 }
 
 .filters
@@ -409,14 +551,10 @@ padding-top:10px;
 background-color: #0b2c4f;
 margin-top: 0px;
 margin-bottom: 0px;
-padding: 30px 0 0px 0;
-}
+padding: 30px 15px 10px 15px;}
 
 .media-view {
 border-top: 10px solid #bbb;
-.content{
-margin-top:10px;
-}
 }
 .header-banner form{
 
@@ -512,7 +650,7 @@ background: #1C5385 url("../../../base/images/bg.png");
 
 [role=main], .main {
 margin-top: 0;
-background: #fff;
+background: #fff !important;
 }
 
 .homepage .module-search .module-content {
@@ -534,7 +672,7 @@ width:100%;
 }
 
 .media-item {
-height: 180px;
+height: 185px;
 }
 font {
 color: #888;
@@ -542,9 +680,15 @@ float: right;
 bottom: 0;
 
 }
-.notes {
-height:45px;
+.package-notes {
+height:65px;
 font-size:11px;
+overflow:hidden;
+}
+.plain-notes {
+height:65px;
+font-size:11px;
+overflow:hidden;
 }
 
 .dataset-content .dataset-heading{
@@ -567,8 +711,14 @@ margin-bottom:5px;
 width: 100%;
 background-color:#000;
 }
+a.logo{
+position:relative;
+}
 }
 @media (min-width: 992px){
+.navbar .nav>li{
+margin: 0 10px;
+}
 
 .package-search-form div{
 margin-right: 20px;
@@ -591,7 +741,7 @@ padding-bottom: 10px;
 margin: 0 5px;
 }
 }
-@media screen and (max-width: 881px) {
+@media screen and (max-width: 891px) {
 .hero >> p {
 width:60%;
 }
@@ -607,11 +757,21 @@ float:none;
 text-align:center;
 font-size:20px;
 }
+.navbar .nav>li.social>a {
+float:left;
+text-align:center;
+font-size:20px;
+}
+
 i.navbar-header * span {
 font-size:27px;
 }
+.navbar .nav>li>a {
+padding: 10px 7px 10px;
+}
 }
 @media (max-width:610px){
+
 .site-search {
 margin-top:10px;
 float: left;
@@ -652,7 +812,7 @@ font-size:24px;
 margin: 0 0;
 }
 .header-logo {
-height:65px;
+height: 31px;
 width:100%;
 margin-bottom: 9px;
 }
