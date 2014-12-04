@@ -1,0 +1,19 @@
+{% ckan_extends %}
+
+{% block custom_fields %}
+{% endblock %}
+{% block package_metadata_fields %}
+    <div class="control-group">
+    <label class="control-label" for="field-featured">{{ _("Featured") }}</label>
+    <div class="controls">
+    <select id="field-field" name="featured">
+    <option value="off">Not Featured</option>
+    <option value="on" {% if data['featured'] == 'on' %} selected {% endif %}>Featured</option>
+
+</select>
+</div>
+  </div>
+  {{ super() }}
+
+{% endblock %}
+
